@@ -25,4 +25,4 @@ To remove the maintenance message, empty the `content/maintenance.md` file.
 
 
 ## Release Notes
-Release notes will always be shown to users when the [`content/release-notes.md`](https://github.com/instana/ui-notifications/blob/gh-pages/content/release-notes.md) file is changed. You can use markdown in this file and there is no document size restriction. If you want to use links in the release notes file, you can do so. Just make sure that you use absolute links instead of relative ones.
+Release notes will always be shown to users when the [`content/release-notes.md`](https://github.com/instana/ui-notifications/blob/gh-pages/content/release-notes.md) file is changed. You can use markdown in this file and there is no document size restriction. If you want to use links in the release notes file, you can do so. Just make sure that you use absolute links instead of relative ones. For instance, in order to reference a file `pic.png` which is located in the `content/files/` directory, use the link `/notifications/files/pic.png`.
