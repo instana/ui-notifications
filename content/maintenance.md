@@ -1,1 +1,1 @@
-Your environment will be upgrade to the next release on *Thursday, 10. June 10:00 UTC*. We expect a very short interruption of dataflow. Please reach out to us if the maintenance window does not work for you. Thanks!
+
