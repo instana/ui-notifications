@@ -5,7 +5,7 @@ _20.May 2016_
 - New Timeline and Timeshift Investigation - hard to explain just with text. Please have a look into the full release notes
 - Tag Search
 
-**new Sesonrs**
+**new Sensors**
 - HAProxy
 - PostgreSQL
 
