@@ -1,8 +1,33 @@
+# Build 110
+_10.June 2016_
+
+**new Features**
+- Full historization of Components - fully persisting all configuration data of all Components over time including their Changes
+- Locator - find components faster on the map
+- Metrics in Charts can be deselected
+- Maintenance and Release Information are now shown in the UI
+- Dynamic Graph Showcase
+
+**new Sensors**
+- Dropwizard
+
+**Improvements**
+- Tomcat Sensor - Data Sources, Threads, Executor Monitoring
+- MySQL and MariaDB - more Configuration Data, more and improved metrics
+- Elasticsearch - Thread Monitoring, Node Dashboard, Indices in Cluster Dashboard
+- Timeline - Scrollbar, Time Range indication, Event Time context is set on click on Event
+- Host Tags sent in Notifications
+- Reworked Account Menu
+
+More improvements and fixes
+
+[Detailed Release Notes Build 110](notifications/files/InstanaReleaseNotes-Build110.pdf)
+
 # Build 108
 _20.May 2016_
 
 **new Features**
-- New Timeline and Timeshift Investigation - hard to explain just with text. Please have a look into the full release notes
+- New Timeline and Timeshift Investigation - hard to explain just with text. Please have a look into the detailed Release Notes
 - Tag Search
 
 **new Sensors**
@@ -15,7 +40,7 @@ _20.May 2016_
 
 More improvements and fixes
 
-[Full Release Notes Build 108](notifications/files/Instana%20Release%20Notes%20-%20Build%20%23108.pdf)
+[Detailed Release Notes Build 108](notifications/files/Instana%20Release%20Notes%20-%20Build%20%23108.pdf)
 
 
 # Build 106
@@ -45,7 +70,7 @@ and more...
 
 More improvements and fixes
 
-[Full Release Notes Build 106](notifications/files/Instana%20Release%20Notes%20-%20Build%20%23106.pdf)
+[Detailed Release Notes Build 106](notifications/files/Instana%20Release%20Notes%20-%20Build%20%23106.pdf)
 
 # Build 87
 _24.Mar 2016_
@@ -61,7 +86,7 @@ and more...
 
 More improvements and fixes
 
-[Full Release Notes Build 87](notifications/files/InstanaReleaseNotes-Release87.pdf)
+[Detailed Release Notes Build 87](notifications/files/InstanaReleaseNotes-Release87.pdf)
 
 
 # Build 65
@@ -82,4 +107,4 @@ and more...
 
 More improvements and fixes
 
-[Full Release Notes Build 65](notifications/files/Instana_Beta_ReleaseNotesBackendBuild65.pdf)
+[Detailed Release Notes Build 65](notifications/files/Instana_Beta_ReleaseNotesBackendBuild65.pdf)
