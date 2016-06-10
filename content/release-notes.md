@@ -73,7 +73,7 @@ More improvements and fixes
 [Detailed Release Notes Build 106](notifications/files/Instana%20Release%20Notes%20-%20Build%20%23106.pdf)
 
 # Build 87
-_24.Mar 2016_
+_24.March 2016_
 
 **new Features**
 - Universal Change Detection - we now track all changes to configuration data the sensors track
@@ -90,7 +90,7 @@ More improvements and fixes
 
 
 # Build 65
-_25.Feb 2016_
+_25.February 2016_
 
 **new Features**
 - Custom Zones
