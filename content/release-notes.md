@@ -1,3 +1,21 @@
+# Build 111
+_21.June 2016_
+
+**new Features**
+ - Table view
+ - Notifications on incidents, changes, offline and online events
+ - tooltips in spark charts
+
+**new Sensors**
+ - Spring Boot
+
+**Improvements**
+ - Cassandra Cluster now aggregates node metrics to cluster.
+ - Changes to Host tags in configuration.yaml are updated at runtime.
+
+See the [detailed release notes](notifications/files/InstanaReleaseNotes-Build111.pdf) for more elaborate release notes.
+
+
 # Build 110
 _10.June 2016_
 
