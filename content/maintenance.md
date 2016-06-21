@@ -1,1 +1,1 @@
-Your environment will be upgrade to the next release on *Tuesday, 21. June*. We will start with *US tenants during EU hours*, and continue with *EU tenants in the US morning*. We expect a very short interruption of dataflow. Please reach out to us if the maintenance window does not work for you. Thanks!
+
