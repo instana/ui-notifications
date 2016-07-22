@@ -1,3 +1,27 @@
+# Build 112
+_22.July 2016_
+
+**new Features**
+ - Search
+ - Agent as Container
+ - Extended Tracing Support
+ - Configurable Secrets
+
+**new Sensors**
+ - Jetty
+
+**Improvements**
+ - Apache HTTPd - added CPU, Traffic Metrics and Knowledge
+ - Docker - added CPU, Memory, Block IO metrics and Knowledge
+ - Knowledge added for Tomcat, Spring Boot, Redis, Cassandra
+ - Collecting Stack Traces for all Exits
+ - Timeline Minimization, further improvements
+ - Shareable URLs
+
+More improvements and fixes
+ 
+[Detailed Release Notes](notifications/files/InstanaReleaseNotes-Build112.pdf)
+
 # Build 111
 _21.June 2016_
 
@@ -13,7 +37,7 @@ _21.June 2016_
  - Cassandra Cluster now aggregates node metrics to cluster.
  - Changes to Host tags in configuration.yaml are updated at runtime.
 
-See the [detailed release notes](notifications/files/InstanaReleaseNotes-Build111.pdf) for more elaborate release notes.
+See the [detailed Release Notes](notifications/files/InstanaReleaseNotes-Build111.pdf) for more elaborate release notes.
 
 
 # Build 110
