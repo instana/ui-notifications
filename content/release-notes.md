@@ -16,7 +16,7 @@ _22.July 2016_
  - Knowledge added for Tomcat, Spring Boot, Redis, Cassandra
  - Collecting Stack Traces for all Exits
  - Timeline Minimization, further improvements
- - Shareable URLs
+ - Shareable URLs include Timeline settings
 
 More improvements and fixes
  
