@@ -1,3 +1,37 @@
+# Build 113
+_15.August 2016_
+
+**new Features**
+ - Logical View
+ - Trace View
+ - Incidents based on Service Health
+ - Dashboard Rework
+ - Search in Logical and Trace
+ - Extended Tracing Support
+ - Extendes Async Tracing Support
+ - Trace Error Tracking
+
+**new Sensors**
+ - ActiveMQ
+ - JBoss Data Grid
+ - Memcached
+ - Solr
+
+**Improvements**
+ - Links to Events sent by Notifications directly open the time the Event has been detected
+ - Support using container and bridge network addresses to monitor containerized components
+ - Reduced agent overhead for systems running many network connections
+ - Tomcat Dashboard now handles connectors which are using an executor pool correctly and displays also executor configuration
+ - Links in the UI are now real links and can be opened in new tabs and are correctly recognized as links when right-clicking them
+ - UI maintains connection to the backend dynamically
+ - Disk Saturation Prediction tuned
+ - Missing Configuration of Sensors shown in Dashboards
+ - Usage Overview has consolidated forecast overview
+
+More improvements and fixes
+ 
+[Detailed Release Notes](notifications/files/InstanaReleaseNotes-Build113.pdf)
+
 # Build 112
 _22.July 2016_
 
