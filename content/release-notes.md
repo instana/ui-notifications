@@ -1,3 +1,41 @@
+# Build 114
+_04.September 2016_
+
+**new Features**
+ - PHP Tracing
+ - Java SDK
+ - Java Code View
+ - Java Thread Dumps
+ - Response Size Tracking
+ - Charts and 3D Rework
+ - Timeline zoom down to 1 Minute
+ - Error Sorting in Traces
+ - License Overview
+
+**new Framework Support**
+ - okhttp3
+ - RESTeasy
+
+**Improvements**
+ - Detecting rejected connections in Redis
+ - Showing Redis max memory configuration
+ - Not attaching to jstat java process
+ - MySQL wait states are now handled nicer
+ - Tuned Sudden Drop Detection
+ - Reduced overhead of rabbitMQ monitoring
+ - Support for memcached authentication and better representation of auth errors
+ - Improved stability of the Instana Agent Windows service (InstanaPCP.exe)
+ - Optimized performance of sending large amounts of data
+ - Improve Service Instance Naming
+ - We now better resolve the Service Instances by traversing the Graph and taking the communication into account
+ - Events show the exact moment in time they started
+ - Trace Drill down on Services shows count of available Traces
+ - Apache Modules overview cleaned up and added local search
+
+More improvements and fixes
+ 
+[Detailed Release Notes](notifications/files/InstanaReleaseNotes-Build114.pdf)
+
 # Build 113
 _15.August 2016_
 
