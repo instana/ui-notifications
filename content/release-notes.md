@@ -14,7 +14,7 @@ _29.September 2016_
  - Varnish Sensor
  - Glassfish Sensor
  
- **new Framework Support**
+**new Framework Support**
  - PHP Tracing: IBM-DB2
  - Java Tracing: Java Mail, Nanohttpd, Mule, Vaadin, Camel, (S)Ftp, Wicket
 
