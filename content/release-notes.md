@@ -19,7 +19,7 @@ _29.September 2016_
  - Java Tracing: Java Mail, Nanohttpd, Mule, Vaadin, Camel, (S)Ftp, Wicket
 
 **Improvements**
- - You now can jump from the physical component directly to the implemented logical
+- You now can jump from the physical component directly to the implemented logical
 services and service instances.
 - Improved compatibility with Docker for PHP tracing, PHP-FPM, HTTPd, MySQL,
 MariaDB sensors.
