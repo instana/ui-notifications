@@ -1,3 +1,42 @@
+# Build 115
+_29.September 2016_
+
+**new Features**
+ - Node.js Tracing
+ - Node.js On Demand Profiling
+ - Cross-Language Tracing
+ - Agent Self Monitoring Exposed via UI
+ - Monitor Any Process
+ - Switch to UTC Timestamps
+ - Jump to Moment of Trace
+
+**new Sensors**
+ - Varnish Sensor
+ - Glassfish Sensor
+ 
+ **new Framework Support**
+ - PHP Tracing: IBM-DB2
+ - Java Tracing: Java Mail, Nanohttpd, Mule, Vaadin, Camel, (S)Ftp, Wicket
+
+**Improvements**
+ - You now can jump from the physical component directly to the implemented logical
+services and service instances.
+- Improved compatibility with Docker for PHP tracing, PHP-FPM, HTTPd, MySQL,
+MariaDB sensors.
+- Tracing now excludes commands for database drivers which are not actually
+executed (like “set names utf-8;”).
+- It is now possible to add specific queue names to RabbitMQ sensor, which will then
+be monitored.
+- PHP-FPM sensor now supports multiple master processes.
+- MySQL metric collection is now much more efficient.
+- Cassandra sensor now captures replication factor.
+- Support Kubernetes Installations with flannel networking.
+- Improved RabbitMQ and Oracle DB service detection.
+
+More improvements and fixes
+ 
+[Detailed Release Notes](notifications/files/InstanaReleaseNotes-Build115.pdf)
+
 # Build 114
 _04.September 2016_
 
