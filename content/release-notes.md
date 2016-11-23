@@ -1,3 +1,33 @@
+# Build 118
+_23.November 2016_
+
+**new Features**
+- Service Mapper - Configuration of HTTP Services
+- Apply time ranges in dashboards/timeline
+- Host List in Zones
+- Navigation to Version of entities
+- Jump to traces for service instances
+
+**Newly supported Technologies**
+- Zookeeper Dashboard
+- Marathon and Nomad Docker Container Data
+
+**Improvements**
+- Added ActiveMQ All Queues Messages DE-queue metric
+- Feign Exit timing, response code and size is now more accurate
+- Added Exits for Tracing: JerseyInvocation, Play 2 WS, cxf
+- Chart showed mixed roll ups. Now showing one rollup for all displayed data points
+- Changed transparency of application connections on map to allow better overview
+- SQL select statement shortening now also works when shortening SQL statements with field names that contain from
+- Charts for disk warnings are now shown in the incident view
+- You can now reach support through the Profile menu
+- Added a log message which alerts of incomplete backend configuration
+- JBoss EJBs are automatically correlated
+
+More improvements and fixes
+ 
+[Detailed Release Notes](https://instana.atlassian.net/wiki/display/DOCS/Build+118)
+
 # Build 117
 _08.November 2016_
 
