@@ -1,3 +1,44 @@
+# Build 119
+_21.December 2016_
+
+**new Features**
+- Web EUM
+- Ruby Tracing
+- Go Tracing
+- Application flow layouting
+- Improved search
+- Metric Chart and Trace export
+- Agent JDK Support
+- Agents for Solaris and AIX
+- Show Entity hierarchy
+- Show your Agent Key
+
+**Newly supported Technologies**
+- Open Tracing in Java, Go and Node!
+- Beta Agent download for AIX PPC and Solaris SPARC
+- Websphere Liberty
+- Etcd
+- OracleDB
+- Java Tracing: Akka Spray Can
+- NodeJs Tracing: Kafka
+- mod_php Tracing
+
+**Improvements**
+- Glassfish AMX is enabled automatically by the sensor
+- More docker installations and configurations supported (especially by RHEL)
+- Do not show local Docker IPs as remote connections on the map
+- Custom availability Zones can be added after agent start
+- PHP Sensor now supports PHP 7.1
+- Websphere Sensor will activate only for real application servers
+- Optimized Memcached Metric calculations
+- Agent backchannel can be turned off
+- Http parameters are filtered by configured secrets
+- PHP Sensor will sanitize SQL statements
+
+More improvements and fixes
+ 
+[Detailed Release Notes](https://instana.atlassian.net/wiki/display/DOCS/Build+119)
+
 # Build 118
 _23.November 2016_
 
