@@ -1,3 +1,46 @@
+# Build 120
+_19.January 2016_
+
+**new Features**
+- PHP Call Stacks and Errors in Traces
+- Automatic Web EUM XMLHttpRequest Instrumentation
+- Better Integration and References between EUM services and EUM traces
+- Service impact correlated to traces
+- Entity health in breadcrumbs
+- Jumping to traces touching any service
+- Block layout for infrastructure view
+- New search bar
+- Time window based metric aggregations
+- JBoss Connection Pool Monitoring
+- Kafka Cluster Monitoring
+- Agent Update Timing Configuration
+
+**Newly supported Technologies**
+- Java Flow style Akka, Spymemcached, capturing Cassandra PreparedStatements
+- PHP distributed Tracing for HTTP calls made via HTTP stream wrappers
+- Ruby OpenTracing support, RestClient, Excon & Dali. Gem Bundle insights
+
+**Improvements**
+- Enhanced Kafka Monitoring and Dashboard
+- Easier deployment of the agent: Putting the JDK to agent-dir/jvm will automatically use it without a JAVA_HOME set.
+- The Instana agent is now monitoring container networks that are brought up dynamically (e.g. with docker compose).
+- Agents that have been installed in 2015 and 2016 now start faster (Feel free to perform a fresh install on your own, to get rid of some baggage of early Instana days. Most recent downloads contain Bootstrap 1.1.5, the docker image id is a031cc1c777d)
+- Container networks that are local no longer show up as unmonitored remote servers
+- Restricted agent socket to the required local networks, no longer listening on all interfaces.
+- Java Instrumentation is now much more robust against incomplete or buggy classloaders, as well as fully working in OSGi containers.
+- Reduced garbage produced during async tracing.
+- The postgres sensor will now respect command line arguments and additionally detect the postmaster process.
+- Better discovery of httpd.worker processes
+- Tweaks for parsing the main class from SAP JVM
+- Services running on mod_php on Apache are now connected to the Apache
+- Agent is now correctly monitoring volumes if deployed in a docker container
+- Agent will use the correct docker process on Rancher OS
+- Oracle DB sensor will handle insufficient permissions more graceful.
+
+More improvements and fixes
+ 
+[Detailed Release Notes](https://instana.atlassian.net/wiki/display/DOCS/Build+120)
+
 # Build 119
 _21.December 2016_
 
