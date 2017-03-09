@@ -22,9 +22,7 @@ _09.March 2017_
 - Agent in DC/OS Universe
 - Java Tracing: Mongo-Async, Ver.x#RunOnContext, OkHttpUrlConnection, HttpsUrlConnection, Jersey, Elasticsearch, Memcache Shade
 - PHP CGI
-- Ruby
- - ActionController, ActionController API, ActiveRecord
- - ActionView insights (layouts, templates, partials)
+- Ruby: ActionController, ActionController API, ActiveRecord, ActionView insights (layouts, templates, partials)
 
 **Improvements**
 - Messages going out via Integrations will now contain also the relevant metrics that triggered the notification
