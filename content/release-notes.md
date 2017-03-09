@@ -1,5 +1,57 @@
+# Build 122
+_09.March 2017_
+
+**new Features**
+- REST API
+- Container Map
+- Set time range
+- Users & Permissions
+- Custom Events API
+- Ansible Event Integration
+- Audit log
+- Search improvements
+- Web EUM unhandled error support
+- On prem: Web EUM
+- Improved Process Top List
+- Statsd support
+- Better insights into usage
+
+**Newly supported Technologies**
+- SAP HANA
+- OpenLDAP
+- Agent in DC/OS Universe
+- Java Tracing: Mongo-Async, Ver.x#RunOnContext, OkHttpUrlConnection, HttpsUrlConnection, Jersey, Elasticsearch, Memcache Shade
+- PHP CGI
+- Ruby
+ - ActionController, ActionController API, ActiveRecord
+ - ActionView insights (layouts, templates, partials)
+
+**Improvements**
+- Messages going out via Integrations will now contain also the relevant metrics that triggered the notification
+- Reduced required IOPS by an order of magnitude for on prem deployments
+- Hostname for service instances in service dashboard
+- Clicking on timestamps of events in incidents set now the selected moment
+- Enlarge views (table, detail) in trace and event view
+- Show duration of an incident/event
+- Improved code highlighting in code view
+- Add time indicator to timelines window size slider
+- Add shortcut (F) to open the search bar
+- Current layouting algorithm is persisted in browsers’ local storage.
+- Add hostname, creation and start date to Docker comparison table.
+- Labels for Docker containers now use the Amazon EC2 container service name when available.
+- Sort host list in zone dashboards by FQDN and hostname.
+- Spans are now indicating the corresponding services
+- The number of connected services/hops can be configured in the settings when filtering services (Settings → User Interface → Number of shown hops when filtering services) This number is currently limited to 0 and 1
+- Users can now toggle the left and right side of the event/trace view to have it full screen.
+- The number of elements in comparison tables is now shown to enable quick counting.
+- Java Tracing now captures also prepared statements that have been prepared before the agent was started.
+
+More improvements and fixes
+
+[Detailed Release Notes](https://instana.atlassian.net/wiki/display/DOCS/Build+122)
+
 # Build 120
-_19.January 2016_
+_19.January 2017_
 
 **new Features**
 - PHP Call Stacks and Errors in Traces
