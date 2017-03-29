@@ -1,7 +1,7 @@
 # Build 123
 _29.March 2017_
 
-[![Detailed Release Notes](https://img.shields.io/badge/Full%20release%20notes-123-brightgreen.svg)](https://instana.atlassian.net/wiki/display/DOCS/Build+123)
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-123-brightgreen.svg)](https://instana.atlassian.net/wiki/display/DOCS/Build+123)
 
 **new Features**
 - Custom rules and custom issues
