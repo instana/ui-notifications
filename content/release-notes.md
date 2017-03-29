@@ -1,11 +1,11 @@
 # Build 123
 _29.March 2017_
 
-[Detailed Release Notes](https://instana.atlassian.net/wiki/display/DOCS/Build+123)
+[![Detailed Release Notes](https://img.shields.io/badge/Full%20release%20notes-123-brightgreen.svg)](https://instana.atlassian.net/wiki/display/DOCS/Build+123)
 
 **new Features**
 - Custom rules and custom issues
-- Use Docker labels in service mapper
+- Use Docker labels in service dsa
 - Use custom container labels for grouping in container view
 - Golang, Nodejs and Ruby are now supported under Kubernetes
 
