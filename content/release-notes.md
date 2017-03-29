@@ -9,7 +9,6 @@ _29.March 2017_
 **Newly supported Technologies**
 - Golang, Nodejs and Ruby are now supported under Kubernetes
 
-
 **Improvements**
 - New metric “cluster state size” on elasticsearch dashboard to make it easier to identify problems when cluster state is growing too large
 - Improved agent support for new Docker and Kubernetes versions
@@ -28,6 +27,8 @@ _29.March 2017_
 **Fixed Issues**
 - Highlighting of selected tags and the selection of tags will no longer result in invalid search queries when tags require escaping.
 - Agents on Big Endian PowerPC / AIX Systems running J9 Java can now connect to the backend
+
+[Detailed Release Notes](https://instana.atlassian.net/wiki/display/DOCS/Build+123)
 
 # Build 122
 _09.March 2017_
