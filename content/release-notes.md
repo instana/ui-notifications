@@ -1,51 +1,39 @@
-# Build 126
-_22.June 2017_
+# Build 127
+_11.July 2017_
 
-[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-126-brightgreen.svg)](https://instana.atlassian.net/wiki/display/DOCS/Build+126)
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-127-brightgreen.svg)](https://instana.atlassian.net/wiki/display/DOCS/Build+127)
 
 **New Features**
- - EUM Uncaught Error Breakdown
- - EUM Resource Overview
- - EUM Span Search Keywords
- - Office 365 Chat Integration
- - Docker Container Port Mappings
+ - Message flyout system
 
 **Newly supported Technologies**
- - Support Java tracing for S3, ehcache, IBM MQ, Spring Scheduled, Akka Http 10, WebMethods http
- - PHP tracing now supports 32bit PHP on Linux
- - Apache HBase Database Dashboard
+ - Monitoring of Liferay Portal Server
+ - Monitoring of Varnish MSE extension
+ - Monitoring of Spark
+ - Batch applications
+ - Streaming applications
+ - Tracing across GRPC in Java and Ruby
+ - Finagle, Aerospike and Tabex tracing in Java
 
 **Improvements**
- - Support monitoring JVMs that are run as systemd process with private PrivateTmp=yes.
- - ActiveMQ Sensor now tracks server role (master/slave)
- - OpenLDAP is now supported within containers
- - Httpd Sensor now supports AIX (as IBM httpd)
- - Add support for GRPC client/server span types and their correlation
- - Add option to install the agent as a service using the one liner
- - Improved UI performance, reduced flickering when maps are very dynamic
- - The time picker now closes automatically when a valid time range is applied
- - Host and container view switcher will now remain open when switching between host and container view.
- - Zoom controls in 3D map now no longer work linearly so that zooming via controls works as expected.
- - Tooltips now work as expected for small charts.
- - Latency charts are now easier to read for services which have a small number of calls.
- - Deselection of the min data set now works for latency charts.
- - The connection lost notification is now reliable.
- - More keyboard controls for our tables (up, down and space bar to expand rows).
- - Break down EUM TCP time into TCP and SSL time.
- - The API is now rate limited to 5,000 calls per hour. How many calls are left and when new calls can be executed is available in the HTTP response via the `X-RateLimit-*` headers.
+ - Performance improvements for the application map
+ - Performance improvements when showing host/SIM usage in UMP
+- The agent one-liner now checks for su privileges
+- The UI settings now have a dedicated save button
+- The search input for the dynamic focus is now always visible to the user
+- The hosts process top list in the dashboard now serves the deepest entity in the graph so that the user can directly detect the causing technology.
+- In the service extraction configurations, it’s now possible to clone a rule by using a shortcut button without editing the JSON by hand. The cloned rule can be found in the corresponding list with the same name plus “_CLONE” at the end. It is also disabled by default.
+- The incidents table view now enables filtering by issues and changes in order to improve event exploration
+- Docker memory rule is now more reliably catching containers that go out of memory very fast
+- Host sensor can be configured to monitor additional network filesystems
+- Improved automatic discovery of memcached and etcd listen ports
+- Spring boot sensor parses build-info file
+- Jersey exception mapper status codes are now respected by java tracing
+- If javascript is deactivated in the browser, we now show a message
 
 **Fixes**
- - Httpd Sensor now handles Apache config case insensitive and considers absolute includes outside the config root directory
- - Postgresql Sensor no longer miscounts query counts
- - Fixed Akka message passing tracing in Scala 2.12
- - Memcached Sensor now correctly calculates hit rate
- - Agent misinterpreted --bridge=none for Docker
- - Java Tracing: Fixed rare case of async spans attached to the wrong trace
- - Java Tracing: Fixed rare case of async vertex spans not attached to a trace
- - .Net Tracing: Fixed not so rare case of async spans not attached to a trace
- - Fixed OpenTracing correlation between Java and Go
- - Fixed Camel and Spring Batch traces rendering
- - Ruby: log_info/add_info should properly translate span.kind #76
- - Ruby: Lower logging verbosity & levels #78
- - EUM: Resources with $ characters in the URL can now be tracked.
- - EUM: Timeouts are now used for beacon transmissions.
+- Batch services are not showing correctly on the application map
+- Fixed invalid etcd leader health check on single node etcd
+- Fixed display problems in UMP when copying the one-liner
+- Scrolling into the map is now the same speed in every browser
+- Mysql wait states have been occasionally missing. We found them.
