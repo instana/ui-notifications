@@ -1,3 +1,44 @@
+# Build 128
+_03. August 2017_
+
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-128-brightgreen.svg)](https://instana.atlassian.net/wiki/display/DOCS/Build+128)
+
+**Features**
+- Calls/s Aggregation in Charts
+- Better Search for Spans - New HTTP Keywords
+- Ignored Services
+- New OS Supported for the Agent: z/OS
+- Capturing custom http headers
+
+**Newly Supported Technologies**
+- Java tracing now supports Axis calls, @Schedule EJBs, Grizzly Http Server and Google Cloud Datastore
+- .NET tracing now supports Memcached via Enyim Caching
+- Agent now supports z/OS
+
+**Improvements**
+- Overall reduction of impact of Java tracing
+- JBoss Data Grid has cache manager statistics
+- Agent now recovers when PHP trace collection breaks temporarily
+- JBoss/WildFly sensor automatically activates statistics for DataSources
+- Multiple redis nodes supported on a single docker host
+- IIS worker processes now have a better name
+- nginx sensor now respects custom-compiled --prefixPath
+- Java attach now supports Docker containers which use user ids that are not mapped to existing users
+- .NET tracing for WebApi and MVC no longer requires an IHttpModule
+- Improved performance for .NET tracing
+- Groupings on infrastructure map are now persisted for current session
+- Ruby: Backport instrumentation to support Ruby on Rails v2.3.8 (and LTS)
+- Go: Event API: Make duration configurable
+- Websphere instances can be searched by serverName / nodeName / cellName
+- The agent is now available as Windows MSI for beta testing. Please contact us if you want to try it out and provide feedback.
+
+**Fixes**
+- Work stealing Fork Join Pools in Java now trace reliably
+- Spring WebMVC DeferredResults now trace also correctly under contention
+- Some API calls could have failed because of unknown ids, which were in fact known
+- Ruby: Lower runtime version requirement for ffi dependency
+- Go: Fix event <--> service linking & Protect against Event API panic
+
 # Build 127
 _11.July 2017_
 
