@@ -1,80 +1,55 @@
-# Build 128
-_03. August 2017_
+# Build 129
+_06. September 2017_
+
+TODO link to release notes
 
 [![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-128-brightgreen.svg)](https://instana.atlassian.net/wiki/display/DOCS/Build+128)
 
 **Features**
-- Calls/s Aggregation in Charts
-- Better Search for Spans - New HTTP Keywords
-- Ignored Services
-- New OS Supported for the Agent: z/OS
-- Capturing custom http headers
+- Website Monitoring
+- Python Tracing
+- Offline Alerting
+- Service Mapping based on host tags and docker labels
+- Agent Health Monitoring
 
 **Newly Supported Technologies**
-- Java tracing now supports Axis calls, @Schedule EJBs, Grizzly Http Server and Google Cloud Datastore
-- .NET tracing now supports Memcached via Enyim Caching
-- Agent now supports z/OS
+
+- Java tracing now supports Vertx Cluster, Amazon SQS, FaunaDB and Quartz
+- Java Tracing now supports Java 9 Modular Applications. This is BETA, please let us know should it not work fully in your configuration.
+- Capturing custom http headers and user-provided error logs in PHP
+- .NET Tracing now supports ASP.NET Core (on classic CLR, Windows only), Microsoft Message-Queue and Enyim.Caching library for Memcached in version 2.11 and 2.16
+- Ruby now supports Redis and Sidekiq
 
 **Improvements**
-- Overall reduction of impact of Java tracing
-- JBoss Data Grid has cache manager statistics
-- Agent now recovers when PHP trace collection breaks temporarily
-- JBoss/WildFly sensor automatically activates statistics for DataSources
-- Multiple redis nodes supported on a single docker host
-- IIS worker processes now have a better name
-- nginx sensor now respects custom-compiled --prefixPath
-- Java attach now supports Docker containers which use user ids that are not mapped to existing users
-- .NET tracing for WebApi and MVC no longer requires an IHttpModule
-- Improved performance for .NET tracing
-- Groupings on infrastructure map are now persisted for current session
-- Ruby: Backport instrumentation to support Ruby on Rails v2.3.8 (and LTS)
-- Go: Event API: Make duration configurable
-- Websphere instances can be searched by serverName / nodeName / cellName
-- The agent is now available as Windows MSI for beta testing. Please contact us if you want to try it out and provide feedback.
+
+- The general Instana settings are now splitted into “User Settings” and “Team Settings”. The user will land on the user interface settings by default.
+- Showcases are now removed from the general drop down menu. The graph showcase can now be accessed from the “About Instana” dialog.
+- X and Y axis within charts got their first overhaul. The minimum and maximum values are now always visible on the Y axis. The X axis now always shows the data in addition to the time. Also, no more label overlaps!
+- Spark charts within Instana have always been small variants of their larger brothers. They suffered from too many data points and non-functional tooltips. These issues have been resolved.
+- For services, we now show error rate within the calls vs. latency charts.
+- Cassandra Sensor now collects unreachable nodes and alerts on them
+- Log messages using a warning level will not be counted as error
+- Naming of Glassfish EJBs is now much better
+- Dropwizard Sensor now has more accurate 1s resolution metrics.
+- The agent now has an option to use the unique id of an instance running in a cloud rather than the mac of a public interface as its unique id. This supports the mac re-use done for example by Google Compute.
+- .NET Tracing spends less time in instrumenting code at startup-time
+- When instrumenting .NET assemblies, the profiler now uses it’s own map of Type-Defs per assembly  for resolving Type-Refs which is more reliable and results in better instrumentation on complex inheritance-chains
+- .NET Tracing does not require the addition of Instana.ManagedTracing.Modules in your web.config anymore. You can safely remove it. 
+- Ruby: Track and occasionally check background thread health #91
 
 **Fixes**
-- Work stealing Fork Join Pools in Java now trace reliably
-- Spring WebMVC DeferredResults now trace also correctly under contention
-- Some API calls could have failed because of unknown ids, which were in fact known
-- Ruby: Lower runtime version requirement for ffi dependency
-- Go: Fix event <--> service linking & Protect against Event API panic
 
-# Build 127
-_11.July 2017_
+- A bug that prevented the 3D-maps to render was fixed. This problem occurred with some combinations of Chrome on Linux, and sometimes with Mesa graphic drivers.
+- Httpd Sensor was alternating between two error messages when status urls could not be reached, resulting in noise.
+- A bug in the docker sensor could cause the agent to die when it encountered a zombie container. We gave it silver bullets so it survives now.
+- Submitting a single trace to the trace API no longer produces an error.
+- A bug in .NET native profiler was fixed, which could crash application-pools when instrumenting methods with a specific signature
+- A bug in .NET native profiler was fixed, which led to the profiler only instrumenting one overload of a method to be instrumented instead of all configured overloads
+- A problem in .NET tracing has been solved which occurred when instrumenting classes in assemblies that have been loaded into the shared AppDomain and resulted in an exception related to differing permission-sets in different AppDomains
+- A bug has been fixed in the managed instrumentation for Asp.Net MVC Controllers which resulted in wrong timing for async controller-methods and possibly blocked threads
+- Go: Fix: Detect error logging and properly mark span as errored #38
+- Known Issues
+- When running the agent on z/OS USS, many infrastructure metrics like memory and cpu usage are unavailable. Monitoring of databases, web servers and runtimes like Java works normally, however.
 
-[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-127-brightgreen.svg)](https://instana.atlassian.net/wiki/display/DOCS/Build+127)
-
-**New Features**
- - Message flyout system
-
-**Newly supported Technologies**
- - Monitoring of Liferay Portal Server
- - Monitoring of Varnish MSE extension
- - Monitoring of Spark
- - Batch applications
- - Streaming applications
- - Tracing across GRPC in Java and Ruby
- - Finagle, Aerospike and Tabex tracing in Java
-
-**Improvements**
- - Performance improvements for the application map
- - Performance improvements when showing host/SIM usage in UMP
-- The agent one-liner now checks for su privileges
-- The UI settings now have a dedicated save button
-- The search input for the dynamic focus is now always visible to the user
-- The hosts process top list in the dashboard now serves the deepest entity in the graph so that the user can directly detect the causing technology.
-- In the service extraction configurations, it’s now possible to clone a rule by using a shortcut button without editing the JSON by hand. The cloned rule can be found in the corresponding list with the same name plus “_CLONE” at the end. It is also disabled by default.
-- The incidents table view now enables filtering by issues and changes in order to improve event exploration
-- Docker memory rule is now more reliably catching containers that go out of memory very fast
-- Host sensor can be configured to monitor additional network filesystems
-- Improved automatic discovery of memcached and etcd listen ports
-- Spring boot sensor parses build-info file
-- Jersey exception mapper status codes are now respected by java tracing
-- If javascript is deactivated in the browser, we now show a message
-
-**Fixes**
-- Batch services are not showing correctly on the application map
-- Fixed invalid etcd leader health check on single node etcd
-- Fixed display problems in UMP when copying the one-liner
-- Scrolling into the map is now the same speed in every browser
-- Mysql wait states have been occasionally missing. We found them.
+**Known issues**
+When running the agent on z/OS USS, many infrastructure metrics like memory and cpu usage are unavailable. However, monitoring of databases, web servers, and runtimes like Java works normally.
