@@ -1,9 +1,7 @@
 # Build 129
 _06. September 2017_
 
-TODO link to release notes
-
-[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-128-brightgreen.svg)](https://instana.atlassian.net/wiki/display/DOCS/Build+128)
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-129-brightgreen.svg)](https://new-docs.instana.io/releases/notes/build_129/)
 
 **Features**
 - Website Monitoring
