@@ -3,8 +3,6 @@ _05. October 2017_
 
 [![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-130-brightgreen.svg)](https://docs.instana.io/releases/notes/build_130/)
 
-05. October 2017
-
 ## Features
 
 - Python: New TextMap OT propagator (thanks @elgris!) [#16](https://github.com/instana/python-sensor/pull/16)
