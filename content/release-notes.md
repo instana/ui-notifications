@@ -1,53 +1,54 @@
-# Build 129
-_06. September 2017_
+# Build 130
+_05. October 2017_
 
-[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-129-brightgreen.svg)](https://new-docs.instana.io/releases/notes/build_129/)
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-130-brightgreen.svg)](https://docs.instana.io/releases/notes/build_130/)
 
-**Features**
-- Website Monitoring
-- Python Tracing
-- Offline Alerting
-- Service Mapping based on host tags and docker labels
-- Agent Health Monitoring
+05. October 2017
 
-**Newly Supported Technologies**
+## Features
 
-- Java tracing now supports Vertx Cluster, Amazon SQS, FaunaDB and Quartz
-- Java Tracing now supports Java 9 Modular Applications. This is BETA, please let us know should it not work fully in your configuration.
-- Capturing custom http headers and user-provided error logs in PHP
-- .NET Tracing now supports ASP.NET Core (on classic CLR, Windows only), Microsoft Message-Queue and Enyim.Caching library for Memcached in version 2.11 and 2.16
-- Ruby now supports Redis and Sidekiq
+- Python: New TextMap OT propagator (thanks @elgris!) [#16](https://github.com/instana/python-sensor/pull/16)
 
-**Improvements**
+## Newly Supported Technologies
 
-- The general Instana settings are now splitted into “User Settings” and “Team Settings”. The user will land on the user interface settings by default.
-- Showcases are now removed from the general drop down menu. The graph showcase can now be accessed from the “About Instana” dialog.
-- X and Y axis within charts got their first overhaul. The minimum and maximum values are now always visible on the Y axis. The X axis now always shows the data in addition to the time. Also, no more label overlaps!
-- Spark charts within Instana have always been small variants of their larger brothers. They suffered from too many data points and non-functional tooltips. These issues have been resolved.
-- For services, we now show error rate within the calls vs. latency charts.
-- Cassandra Sensor now collects unreachable nodes and alerts on them
-- Log messages using a warning level will not be counted as error
-- Naming of Glassfish EJBs is now much better
-- Dropwizard Sensor now has more accurate 1s resolution metrics.
-- The agent now has an option to use the unique id of an instance running in a cloud rather than the mac of a public interface as its unique id. This supports the mac re-use done for example by Google Compute.
-- .NET Tracing spends less time in instrumenting code at startup-time
-- When instrumenting .NET assemblies, the profiler now uses it’s own map of Type-Defs per assembly  for resolving Type-Refs which is more reliable and results in better instrumentation on complex inheritance-chains
-- .NET Tracing does not require the addition of Instana.ManagedTracing.Modules in your web.config anymore. You can safely remove it. 
-- Ruby: Track and occasionally check background thread health #91
+- Mule ESB: Initial discovery and dashboards
+- Java 9 support
 
-**Fixes**
+## Improvements
 
-- A bug that prevented the 3D-maps to render was fixed. This problem occurred with some combinations of Chrome on Linux, and sometimes with Mesa graphic drivers.
-- Httpd Sensor was alternating between two error messages when status urls could not be reached, resulting in noise.
-- A bug in the docker sensor could cause the agent to die when it encountered a zombie container. We gave it silver bullets so it survives now.
-- Submitting a single trace to the trace API no longer produces an error.
-- A bug in .NET native profiler was fixed, which could crash application-pools when instrumenting methods with a specific signature
-- A bug in .NET native profiler was fixed, which led to the profiler only instrumenting one overload of a method to be instrumented instead of all configured overloads
-- A problem in .NET tracing has been solved which occurred when instrumenting classes in assemblies that have been loaded into the shared AppDomain and resulted in an exception related to differing permission-sets in different AppDomains
-- A bug has been fixed in the managed instrumentation for Asp.Net MVC Controllers which resulted in wrong timing for async controller-methods and possibly blocked threads
-- Go: Fix: Detect error logging and properly mark span as errored #38
-- Known Issues
-- When running the agent on z/OS USS, many infrastructure metrics like memory and cpu usage are unavailable. Monitoring of databases, web servers and runtimes like Java works normally, however.
+- Go: Delete pre-existing HTTP Header keys to avoid append (thanks @vetinari for pointing this out!) [#40](https://github.com/instana/golang-sensor/pull/40)
+- Go: Better locking to avoid data races [#41](https://github.com/instana/golang-sensor/pull/41)
+- Go: Only report custom service name from tracer (if configured) [#43](https://github.com/instana/golang-sensor/pull/43)
+- Python: Handle errors and make best effort to report what we have for snapshot collection (thanks @elgris!) [#24](https://github.com/instana/python-sensor/pull/24)
+- Python: Fix exception logging: convert to string (thanks @elgris) [#22](https://github.com/instana/python-sensor/pull/22)
+- Python: Add handle_fork function for eventual pid change detection [#21](https://github.com/instana/python-sensor/pull/21)
+- Python: Implement advanced announce for containers [#20](https://github.com/instana/python-sensor/pull/20)
+- Python: Improved detection of the default gateway (thanks @elgris!) [#18](https://github.com/instana/python-sensor/pull/18)
+- Python: Logging: Make sure the arg we are passing is a string [#19](https://github.com/instana/python-sensor/pull/19)
+- Python: Better process/entity naming [#27](https://github.com/instana/python-sensor/pull/27)
+- Python: Custom service name support [#25](https://github.com/instana/python-sensor/pull/25)
+- Ruby Performance: Don't create a new Integer Range on each ID generation [#92](https://github.com/instana/ruby-sensor/pull/92)
+- Ruby: Loosen up the dependency on timers to >= 4.0 [#95](https://github.com/instana/ruby-sensor/pull/95)
+- Ruby: Require entire CGI due to Ruby 2.4.1 bug #13539 [#94](https://github.com/instana/ruby-sensor/pull/94)
+- Ruby Performance: Use clock_gettime instead of converting Time object [#93](https://github.com/instana/ruby-sensor/pull/93)
+- Ruby Performance: Disable backtrace collection by default; add config option [#98](https://github.com/instana/ruby-sensor/pull/98)
+- Ruby: Report spans in batches [#96](https://github.com/instana/ruby-sensor/pull/96)
+- Ruby: Improved debug checks and logging [#97](https://github.com/instana/ruby-sensor/pull/97)
+- Ruby Performance: Switch to Oj for faster json processing. [#101](https://github.com/instana/ruby-sensor/pull/101)
+- Java: Reduced memory usage for tracing
+- Java: Trace remote vertx communication
+- Java: automatic attachment improvements for early Java 6 builds
+- JBoss: AS 7.0 compatibility, fixed incorrect servlet invocation counts
+- PHP: Performance Improvements
+- Kafka: Corrected partition count
+- MongoDB: Support strings in bindIP config
+- Etcd: added more client url discoveries
+- RabbitMQ: Corrected reported port list. Performance improvements.
+- Docker: fixed missing network metrics under some configurations
+- .Net: Performance improvements
+- Varnish: Support Varnish v3 metrics
+- PostgreSQL: Fix communication with postgres when running on default interface
 
-**Known issues**
-When running the agent on z/OS USS, many infrastructure metrics like memory and cpu usage are unavailable. However, monitoring of databases, web servers, and runtimes like Java works normally.
+### Agent Health Monitoring
+
+Based on feedback from the last release we've introduced a chart to visualize change in reporting agents over time and improved the design of the overview and agent dashboard. Enjoy!
