@@ -1,54 +1,49 @@
-# Build 131
-_09. November 2017_
+# Build 132
+_05. December 2017_
 
-[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-131-brightgreen.svg)](https://docs.instana.io/releases/notes/build_131/)
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-132-brightgreen.svg)](https://docs.instana.io/releases/notes/build_132/)
 
 ## Features
 
-- Agent installer for Windows
-- Usage API endpoint
-- Custom JavaScript error reporting
+- Flexible alerting
+- AWS support
 
 ## Improvements
 
-- The infrastructure map now loads much faster. It shows an abstraction of the inner inventory on higher zoom levels, and the concrete inventory when zooming into the map and/or over the hosts tooltip.
-- The MongoDB dashboard got a small overhaul and more sensible metric presentations.
-- We switched the position of the service and infrastructure elements within the trace view to account for their respective significance.
-- HTTP status codes can now be used for service extraction.
-- The dynamic focus input field got some small improvements so that typing in queries feels more natural.
-- Saving and accessing dynamic focus filters has been improved.
-- WebApps have been renamed to web services.
-- The Docker CPU metric now follows the same algorithm as the Docker CLI.
-- PHP Services running on Apache with mod_php show now up in the Apache Sidebar
-- DB2 calls traced via PHP will now result in database services.
-- PHP infrastructure is now also included when running PHP in Docker containers
-- Stacked area charts are now rendered even when a data series is missing values.
-- The PHP sensor now supports a notificationScript that is triggered whenever the sensor is updated.
-- Greatly improved Play 2 tracing support that now captures way more styles of registering http handlers.
-- Java tracing can now handle much higher load with the same memory usage on the agent process.
-- PHP config data is now showing in parent dashboards
-- Go Sensor: Improved Recorder: better queue locking & management [#46](https://github.com/instana/golang-sensor/pull/46)
-- Go Sensor: Improved log output: Less noise; proper log levels. [#45](https://github.com/instana/golang-sensor/pull/45)
-- NodeJS Sensor: Added Request query capture & reporting [#13](https://github.com/instana/nodejs-sensor/pull/13)
+- New NodeJS version 8 support. The NodeJS sensor now will instrument apps running on NodeJS versions 8.2.1 and higher.  See the [NodeJS documentation](/ecosystem/node-js/) for specifics.
+- The trace and event view will now present only the list of item in a fullscreen mode. When selecting an item, users will find the view as it was before, split into two columns: The item list on the left and details about the selected one on the right.
+- Interacting with the comparison table or the event view will no longer manipulate the dynamic focus input field.
+- Infinite scrolling for trace and event list is now replaced by an explicit interaction button.
+- Tables are now unified in their look and behaviour.
+- Changes to the entity type, selected entities and metrics in the comparison table are now encoded to the URL
+- Improved support for Azure Instance metadata
+- JVM crashes are now detected and reported automatically
+- Java Tracing now supports Amazon DynamoDB
+- Instana Java SDK will automatically mark the first INTERMEDIATE span as ENTRY
+- The Instana agent will now consume less peak memory and thus support tracing higher call volumes. It is recommended to "re-install" agents from a fresh download which are older than 6 months to take advantage of this.
+- Improved parsing of MySQL configuration for auto-discovery
+- Improved support for Docker, Kubernetes and Weave Networking which does not appear in `docker inspect`
+- Initial support for running the agent in Amazon ECS and EKS
+- Reduced overhead introduced by .NET-Tracing (memory-consumption and CPU-cycles)
+- Reduced cpu usage of InstanaPCP
+- InstanaPCP now checks for prerequisites being installed upon starting 
+- Added EUM-support for .NET applications (ASP.NET WebForms, WebAPI and MVC)
+- Added instrumentaton for HttpWebRequest
+- Services created based on ASP.NET Spans will not be case-sensitive anymore (thus no duplicate services)
+- Marathon application ID (appId) and labels can be used for service definition and naming in the Service Extraction Rules
 
 ## Fixes
 
-- Event detail panes are closable even when no event is selected.
-- Clicking on a health indicator will now correctly encode IDs and thus result in valid dynamic focus entries.
-- `span.erroneous` and `trace.erroneous` are now working again.
-- Trace search now works for URLs, e.g. `span.http.url`.
-- Navigating to traces from website monitoring errors could result in errors, and now work in all cases.
-- PHP tracing extension will no longer cause 400 - Bad Request on some CURL calls
-- Monitoring certain Weblogic Servers did not work. Now it does.
-- Custom JMX values containing a # can now be monitored.
-- The containerized agent can now read filesystems even when /etc/mtab is a symlink.
-- Incidents are triggered as configured on entity going offline detection rules.
-- Search for longer running traces now works with entities-related queries.
-- Wild cards and phrase queries are working when filtering events by problem text.
-- Wild card queries using `?` symbol are working as expected.
-- Python Sensor: Fixed Instana context HTTP headers prefix [#28](https://github.com/instana/python-sensor/pull/28)
-- Python Sensor: OpenTracing Propagators now support all forms of Instana Headers [#29](https://github.com/instana/python-sensor/pull/29)
-- Python Sensor: Protect against byte based json [#31](https://github.com/instana/python-sensor/pull/31)
-- Go Sensor: Report Go version in snapshot [#44](https://github.com/instana/golang-sensor/pull/44)
-- Ruby Sensor: Fix latest Redis & GRPC gem support [#103](https://github.com/instana/ruby-sensor/releases/tag/1.7.7)
-- Metric rollups for services with very infrequent requests are now created correctly.
+- `OR` connected terms in dynamic focus will now lead to correct results in the agents overview.
+- NodeJS Sensor: Node.js <=4.5.0 can have Buffer.from, but it does not accept a string. Thanks @libozh!
+- NodeJS Sensor: Support announce to agent even when the Node.js process is renamed.
+- Python Sensor: Don't report submodules in snapshot.
+- Python Sensor: Lower log levels for non-critical issues
+- JBoss Data Grid Sensor: Improved hit rate calculation
+- NGinx Sensor: Fixes parsing problems with Naxis Rules
+- Correctly detect Docker socket when the "-H" argument is empty (like in OpenShift)
+- .NET Tracing: Correlation of traces between WCF-client and -service on basicHttpBinding
+- .NET Tracing: Stack-walking for .NET Classic 4.7.1
+- .NET Tracing: Duplicate addition of headers on nested Http-calls
+- .NET Tracing: Fixed unknown MsSQL server
+- Fixed a problem with reporting metrics for CLR-processes when Performance-Counters are not installed
