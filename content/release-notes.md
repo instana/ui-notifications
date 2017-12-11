@@ -10,7 +10,7 @@ _05. December 2017_
 
 ## Improvements
 
-- New NodeJS version 8 support. The NodeJS sensor now will instrument apps running on NodeJS versions 8.2.1 and higher.  See the [NodeJS documentation](/ecosystem/node-js/) for specifics.
+- New NodeJS version 8 support. The NodeJS sensor now will instrument apps running on NodeJS versions 8.2.1 and higher.  See the [NodeJS documentation](https://docs.instana.io/ecosystem/node-js/) for specifics.
 - The trace and event view will now present only the list of item in a fullscreen mode. When selecting an item, users will find the view as it was before, split into two columns: The item list on the left and details about the selected one on the right.
 - Interacting with the comparison table or the event view will no longer manipulate the dynamic focus input field.
 - Infinite scrolling for trace and event list is now replaced by an explicit interaction button.
