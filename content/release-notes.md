@@ -1,49 +1,40 @@
-# Build 132
-_05. December 2017_
+# Build 133
+_11. January 2018_
 
-[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-132-brightgreen.svg)](https://docs.instana.io/releases/notes/build_132/)
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-133-brightgreen.svg)](https://docs.instana.io/releases/notes/build_133/)
 
 ## Features
 
-- Flexible alerting
-- AWS support
+### Single Sign-on (SSO)
+
+Instana now supports Single Sign-On (SSO) using Google. To activate SSO for your tenant, navigate to the management portal and specify a domain filter for SSO. This filter ensures that only users with email addresses matching your filter will have access to your tenant. Read more in the [authentication docs](https://docs.instana.io/quick_start/authentication/)
+
+### Two-factor Authentication (2FA)
+
+Two-factor authentication (2FA) is now available to increase the security of your Instana account. 2FA works seamlessly together with both our standard login as well as the new single sign-on. Read more in the [authentication docs](https://docs.instana.io/quick_start/authentication/)
+
+### AWS ElastiCache 
+
+To provide deep visibility and insight into the Amazon ElastiCache service, Instana now automatically discovers and monitors both Redis and Memcached in-memory data stores. Read more about our [AWS support](https://docs.instana.io/ecosystem/aws)
 
 ## Improvements
 
-- New NodeJS version 8 support. The NodeJS sensor now will instrument apps running on NodeJS versions 8.2.1 and higher.  See the [NodeJS documentation](https://docs.instana.io/ecosystem/node-js/) for specifics.
-- The trace and event view will now present only the list of item in a fullscreen mode. When selecting an item, users will find the view as it was before, split into two columns: The item list on the left and details about the selected one on the right.
-- Interacting with the comparison table or the event view will no longer manipulate the dynamic focus input field.
-- Infinite scrolling for trace and event list is now replaced by an explicit interaction button.
-- Tables are now unified in their look and behaviour.
-- Changes to the entity type, selected entities and metrics in the comparison table are now encoded to the URL
-- Improved support for Azure Instance metadata
-- JVM crashes are now detected and reported automatically
-- Java Tracing now supports Amazon DynamoDB
-- Instana Java SDK will automatically mark the first INTERMEDIATE span as ENTRY
-- The Instana agent will now consume less peak memory and thus support tracing higher call volumes. It is recommended to "re-install" agents from a fresh download which are older than 6 months to take advantage of this.
-- Improved parsing of MySQL configuration for auto-discovery
-- Improved support for Docker, Kubernetes and Weave Networking which does not appear in `docker inspect`
-- Initial support for running the agent in Amazon ECS and EKS
-- Reduced overhead introduced by .NET-Tracing (memory-consumption and CPU-cycles)
-- Reduced cpu usage of InstanaPCP
-- InstanaPCP now checks for prerequisites being installed upon starting 
-- Added EUM-support for .NET applications (ASP.NET WebForms, WebAPI and MVC)
-- Added instrumentaton for HttpWebRequest
-- Services created based on ASP.NET Spans will not be case-sensitive anymore (thus no duplicate services)
-- Marathon application ID (appId) and labels can be used for service definition and naming in the Service Extraction Rules
+- Python: New Urllib3 instrumentation
+- PHP: trace HTTP calls made via SoapClient
+- Nomad jobName and taskName can be used for service definition and naming in the Service Extraction Rules
+- Support for attaching to JVMs running on IBM J9 inside a container
+- Improved Java Instrumentation performance
+- New Java Instrumentation for HttpClient 3.x, Ratpack Http, Play 2.4 via Netty, Apache HttpClient Nio, CXF Http Endpoints
+- Support for Opentracing 0.31 and improved semantics
+- Failing Dropwizard Healthchecks are converted into Instana issues
+- More Zookeeper Metrics on replicated setups
+- Elasticsearch Sensor: Compatibility to Elasticsearch 6
+- JBoss Sensor: Added Support for reporting on XA datasources
+- Support for reading HAProxy config files in containers
+- Support for reading Nginx symlink included config files in containers
+- On premises only: EUM Client IP anonymization can be turned off
 
 ## Fixes
 
-- `OR` connected terms in dynamic focus will now lead to correct results in the agents overview.
-- NodeJS Sensor: Node.js <=4.5.0 can have Buffer.from, but it does not accept a string. Thanks @libozh!
-- NodeJS Sensor: Support announce to agent even when the Node.js process is renamed.
-- Python Sensor: Don't report submodules in snapshot.
-- Python Sensor: Lower log levels for non-critical issues
-- JBoss Data Grid Sensor: Improved hit rate calculation
-- NGinx Sensor: Fixes parsing problems with Naxis Rules
-- Correctly detect Docker socket when the "-H" argument is empty (like in OpenShift)
-- .NET Tracing: Correlation of traces between WCF-client and -service on basicHttpBinding
-- .NET Tracing: Stack-walking for .NET Classic 4.7.1
-- .NET Tracing: Duplicate addition of headers on nested Http-calls
-- .NET Tracing: Fixed unknown MsSQL server
-- Fixed a problem with reporting metrics for CLR-processes when Performance-Counters are not installed
+- PHP: DB2 calls are not batched
+- PHP + Apache: inaccessible locations no longer stall the agent
