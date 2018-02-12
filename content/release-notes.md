@@ -1,7 +1,7 @@
 # Build 134
 _8. February 2018_
 
-[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-133-brightgreen.svg)](https://docs.instana.io/releases/notes/build_134/)
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-134-brightgreen.svg)](https://docs.instana.io/releases/notes/build_134/)
 
 ## Features
 
