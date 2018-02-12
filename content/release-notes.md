@@ -1,40 +1,53 @@
-# Build 133
-_11. January 2018_
+# Build 134
+_8. February 2018_
 
-[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-133-brightgreen.svg)](https://docs.instana.io/releases/notes/build_133/)
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-134-brightgreen.svg)](https://docs.instana.io/releases/notes/build_134/)
 
 ## Features
 
-### Single Sign-on (SSO)
+### HipChat Integration
 
-Instana now supports Single Sign-On (SSO) using Google. To activate SSO for your tenant, navigate to the management portal and specify a domain filter for SSO. This filter ensures that only users with email addresses matching your filter will have access to your tenant. Read more in the [authentication docs](https://docs.instana.io/quick_start/authentication/)
+There's now another alerting integration to take advantage of with the introduction of our [HipChat support](https://docs.instana.io/ecosystem/hipchat).
 
-### Two-factor Authentication (2FA)
+### Unique entity types API endpoint
 
-Two-factor authentication (2FA) is now available to increase the security of your Instana account. 2FA works seamlessly together with both our standard login as well as the new single sign-on. Read more in the [authentication docs](https://docs.instana.io/quick_start/authentication/)
+We've added a [new API endpoint](https://documenter.getpostman.com/view/1527374/instana-api/2TqWQh#6534d5a0-3776-eb53-734d-d7f77124636f) that returns a list of unique plugin ids based on a dynamic focus query and a time.
 
-### AWS ElastiCache 
+### More NodeJS Visibility
 
-To provide deep visibility and insight into the Amazon ElastiCache service, Instana now automatically discovers and monitors both Redis and Memcached in-memory data stores. Read more about our [AWS support](https://docs.instana.io/ecosystem/aws)
+The NodeJS language sensor now provides insight into Redis (redis & ioredis packages) and MySQL (mysql2 package).  The language sensor has also been licensed under the MIT License.
+
+### XRay Integration
+
+We've included the ability to collect XRay traces and integrate them into Instana.
 
 ## Improvements
 
-- Python: New Urllib3 instrumentation
-- PHP: trace HTTP calls made via SoapClient
-- Nomad jobName and taskName can be used for service definition and naming in the Service Extraction Rules
-- Support for attaching to JVMs running on IBM J9 inside a container
-- Improved Java Instrumentation performance
-- New Java Instrumentation for HttpClient 3.x, Ratpack Http, Play 2.4 via Netty, Apache HttpClient Nio, CXF Http Endpoints
-- Support for Opentracing 0.31 and improved semantics
-- Failing Dropwizard Healthchecks are converted into Instana issues
-- More Zookeeper Metrics on replicated setups
-- Elasticsearch Sensor: Compatibility to Elasticsearch 6
-- JBoss Sensor: Added Support for reporting on XA datasources
-- Support for reading HAProxy config files in containers
-- Support for reading Nginx symlink included config files in containers
-- On premises only: EUM Client IP anonymization can be turned off
+* Go Sensor: Add EUM Snippet generator
+* NodeJS Sensor: Update Server-Timing response header in HTTP instrumentation to format of latest spec version
+* NodeJS Sensor: Include details about uncaught errors in express handlers
+* NodeJS Sensor: Support HTTPS server tracing
+* NodeJS Sensor: Add batch (pipeline) support for Redis
+* Python Sensor: A more reliable way to determine true command line on OSX
+* Python Sensor: EUM Helper & Tests
+* Python Sensor: More resilient snapshot collection
+* Python Sensor: Centralize & simplify service naming
+* Support macromedia sqlserver jdbc urls
+* Improve service extraction for traces where an entry span is directly followed by another entry span
+* Connect ldap services with underlying OpenLDAP infrastructure process based on IP and port
+* Percentile metrics over different window sizes can be used in custom rules
+* Apache Spark: Added support for monitoring spark standalone cluster manager
 
 ## Fixes
 
-- PHP: DB2 calls are not batched
-- PHP + Apache: inaccessible locations no longer stall the agent
+* NodeJS Sensor: Call sequences are not recoded when using Redis
+* NodeJS Sensor: Exclude exec call from Redis instrumentation sub commands
+* NodeJS Sensor: HTTP tracing will report incorrect path in case of express.js router usage
+* NodeJS Sensor: Node.js <=4.5.0 can have Buffer.from, but it does not accept a string. Thanks @libozh!
+* NodeJS Sensor: Support announce to agent even when the Node.js process is renamed
+* Python Sensor: Hook lower in urllib3 for greater coverage
+* Python Sensor: Cleanup runtime initialization
+* Python Sensor: Deprecate `instana.tracer.init()`
+* Python Sensor: Urllib3: Respect tracing state
+* Ruby Sensor: Fix Net HTTP instrumentation can close wrong span (thanks @nguyenquangminh0711!)
+* Ruby Sensor: Fix Opentracing tag & log storage in span
