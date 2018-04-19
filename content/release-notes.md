@@ -1,8 +1,8 @@
----
-title: Build 136
----
+# Build 136
 
 19 April 2018
+
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-136-brightgreen.svg)](https://docs.instana.io/releases/notes/build_136/)
 
 ## Features
 
