@@ -1,78 +1,54 @@
-# Build 136
+# Build 137
 
-19 April 2018
+29 May 2018
 
-[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-136-brightgreen.svg)](https://docs.instana.io/releases/notes/build_136/)
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-137-brightgreen.svg)](https://docs.instana.io/releases/notes/build_137/)
 
 ## Features
 
-### AWS DynamoDB
+### Kubernetes
 
-Instana now automatically discovers and monitors AWS DynamoDB. Read more about our [AWS support](https://docs.instana.io/ecosystem/aws)
+Instana now automatically discovers and monitors Kubernetes clusters. See our [Kubernetes docs](https://docs.instana.io/ecosystem/kubernetes/) for details.
 
-### AWS ELB
+**Please Note:** An update your instana-agent Kubernetes configuration is required. For more details see [Kubernetes agent setup](https://docs.instana.io/quick_start/agent_setup/container/kubernetes/)
 
-We've also extended AWS support to AWS ELB. Read more on our [AWS support](https://docs.instana.io/ecosystem/aws)
+### OpenShift
 
-### HashiCorp Consul Service Discovery
+Along with our Kubernetes monitoring, we also now support OpenShift. See our [Openshift docs](https://docs.instana.io/ecosystem/openshift/) for details.
 
-We've added monitoring for the Consul service discovery. Read more on our [Consul docs](https://docs.instana.io/ecosystem/consul)
+**Please Note:** An update to your instana-agent OpenShift configuration is required. For more details see [Openshift setup](https://docs.instana.io/quick_start/agent_setup/container/openshift/)
 
-### Couchbase
+### Ceph
 
-Instana also now monitors Couchbase. Read more on our [Couchbase docs](https://docs.instana.io/ecosystem/couchbase)
+We've also added monitoring of the Ceph distributed storage system. See our [Ceph docs](https://docs.instana.io/ecosystem/ceph/) for details.
 
-### NodeJS v9 Support
+### Node.js v10
 
-Instana now supports NodeJS versions 9.1.0 and above. See our [NodeJS docs](https://docs.instana.io/ecosystem/node-js/#supported-versions) for details.
+Ahead of official LTS in October, we now support Node.js versions 10.0.0 and above. See our [Node.js docs](https://docs.instana.io/ecosystem/node-js/#supported-versions) for details.
 
-### Java 10 (and experimental 11) Support
+### Python SUDS (SOAP) Visibility
 
-Instana now supports Java 10. See our [JVM docs](https://docs.instana.io/ecosystem/jvm/#supported-versions) for details.
-Support for Java 11 is experimental as it is still in development and contains significant changes for Java Agents like Instana.
-
-## JVM Deadlock detection
-
-Instana applies a low overhead deadlock detection. Should we see the same threads blocked over a longer period, we will check if they are deadlocked and report this as an issue on the JVM.
-
-## JBoss EJB monitoring
-
-Instana now monitors deployed Session Beans and their pool usage on JBoss/Wildfly Application Servers.
+The latest Python sensor now includes instrumentation for the [suds-jurko package](https://pypi.org/project/suds-jurko/).
 
 ## Improvements
 
-- lots of Agent performance improvements for reduced CPU and IO usage.
-- The JVM name can now be used for service mapping, see [Service Management](https://docs.instana.io/products/application_service_management/#jvm).
-- Container Processes will now include their container name and in-container PID in the sidebar
-- Improved network communication between PHP sensor and PHP tracing extension
-- NodeJS Sensor: Add tracing support for mysql2/promise
-- Python Sensor: Avoid pre-emptively loading Django middleware
-- Python Sensor: Improved thread metrics
-- Python Sensor: Standardize on `INSTANA_AGENT_HOST` environment variable; Deprecate `INSTANA_AGENT_IP`
-- Python Sensor: Unify Django middleware for multiple versions into one
-- Improved tracing support for Play 2.6, Scala Executors and Akka Fork Join Pool
-- Supports tracing of DB calls made by Scala Slick framework
-- Supports now tracing of Mongo 3.6 Java driver
-- Added tracing for Java Couchbase client
-- MsSQL Services are now mapped to the servers they are running on
-- SQL Statements made throuigh Java Glassfish 4 wrappers are now traced correctly
-- Improved naming of CLR processes
-- Speed up Java Tracing instrumentation
-- HA Proxy Sensor now supports metrics for multi process configurations
-- Host Sensor allows exclusion of file systems (for example if they are known to be full)
-- PostgreSQL Sensor now supports servers runnign without a configured listen_address
-- Agent Windows Offline Installer (64bit) can now be downloaded from the User Management Portal
+- RabbitMq Sensor: Added [Network Partition Detection](https://www.rabbitmq.com/partitions.html) and alerting both as an incident and on dashboard.
+- MongoDB Sensor: Added set of new metrics for [MongoDB Replica Set](https://docs.mongodb.com/manual/replication/).
+- Postgresql Sensor: Added info about database size and number of active connection
+- ActiveMQ Sensor: Monitor a defined amount of topics/queues (including Dead-Letter queues) and alerting if filling
+- Python Sensor: Added safeties to Django calls
+- Python Sensor: Removed unused snapshot fields
+- Python Sensor: Show package version on boot
+- Ruby Sensor: Improved logger levels, hints and supported environment variables
+- Ruby Sensor: Show gem version in boot message
+- Go Sensor: re-use http client (performance)
+- Consul Sensor: Added configuration for ACL policy [Consul Sensor Configuration](https://docs.instana.io/ecosystem/consul/#configuration)
+
 
 ## Fixes
 
-- Python Sensor: Django: Support old-style MIDDLEWARE_CLASSES in Django <2.0
-- NodeJS Sensor: ioRedis instrumentation can lead to errors when async correlation doesn't work as expected
-- PHP Tracing: traces will no longer map to wrong service when multiple PHP containers run on the same host
-- PHP-FPM: fixed a rare condition where the sensor would stall the agent
-- PHP companion sidebars will no longer render when empty
-- Ruby Sensor: Improved logging levels
-- Ruby Sensor: Fix issue that affected loading Rails console on OSX
-- Spark Sensor: Could collect incorrect data about completed stages when stages complete during calculation
-- In rare circumstances Java tracing could trigger a JVM crash when log4j 1 logging was used. This should not longer happen.
-- HA Proxy sensor now works even with excessive usage of whitspaces in HA Proxy config file.
-- If the agent is started on a system with high load and significant traffic to Nodjs/Python/Ruby apps, the agent could fail to startup correctly. This has been resolved.
+- Node.js Sensor: Properly initialize and assure operationId is generated in MongoDB instrumentation.
+- Node.js Sensor: Support for 128bit trace IDs.
+- Node.js Sensor: Reduce memory footprint when using HTTP agents with `maxSockets: Infinity`
+- Python Sensor: Specify exception class to be caught
+- Ruby Sensor: Update sys-proctable API call to follow upstream changes in v1.2.0
