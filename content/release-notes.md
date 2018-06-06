@@ -1,3 +1,24 @@
+# Build 138
+
+6 June 2018
+
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-138-brightgreen.svg)](https://docs.instana.io/releases/notes/build_138/)
+
+## Features
+
+### AWS Lambda
+
+Instana now automatically discovers and monitors AWS Lambda. Read more about our [AWS support](https://docs.instana.io/ecosystem/aws)
+
+## Improvements
+
+- Various performance & reliability improvements.
+
+## Fixes
+
+- Node.js sensor: Correctly manage tracing context in ioredis instrumentation
+
+
 # Build 137
 
 29 May 2018
