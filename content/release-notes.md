@@ -1,3 +1,51 @@
+# Build 139
+
+July 9, 2018
+
+## Features
+ - New: Splunk downstream integration
+ - New: OpenShift 3.7 support
+ - New: Kubernetes 1.7 support
+ - New: Python REST API Client – [access your data](https://github.com/instana/python-sensor/pull/52) from Python!
+ - New: Support recording of user-configurable HTTP headers in HTTP client and server instrumentation in Node.js
+ - New: Automatically track HTTP requests initiated within web browsers via the [fetch API](https://fetch.spec.whatwg.org/).
+ - New: Extended error tracking to get more insights into `Script Error`s. Requires [manual opt-in](/products/website_monitoring/api#insights-into-script-errors).
+ - New: OpsGenie's [European service region](https://docs.opsgenie.com/docs/european-service-region) can now be configured for integrations.
+
+## Improvements
+ - Node.js Sensor: Correctly manage tracing context in ioredis instrumentation
+ - Node.js Sensor: Abort HTTP requests to the agent on timeouts
+ - Node.js Sensor: Include reporting PID in agent logs
+ - Node.js Sensor: Include additional debugging data in log when data transmission to agent fails
+ - Python Sensor: Improved Logger Naming & Formatting (thanks [@arnulfojr](https://github.com/instana/python-sensor/pull/82)!)
+ - Python Sensor: Smarter, better, easier [Django initialization](https://github.com/instana/python-sensor/releases/tag/0.9.0)
+ - RabbitMQ queue filling alerting
+ - WebLogic v12 support and metrics improvements
+ - The trace view will now differentiate between the following two states for HTTP spans: *"no query parameters recorded"* and *"the HTTP request did not contain any query parameters"*.
+ - MongoDb Replica Set Grouping (and replica set metrics)
+
+## Fixes
+ - Httpd Sensor: fixed a issue with certain config files being unreadable in containers
+ - Httpd Sensor: will now ignore busybox httpd
+ - Node.js Sensor: Fix OpenTracing baggage when using getCurrentlyActiveInstanaSpanContext
+ - Node.js Sensor: Protect spans from accidental retransmission
+ - Node.js Sensor: Fix: HTTP client instrumentation does not correctly interpret HTTP client timeouts
+ - PHP Sensor: improved detection of httpds running mod_php
+ - PHP Sensor: closed a possible gap between sending and acceptance of traces causing spurious services
+ - PHP Sensor: fixed an issue with symlinked FPM configs in docker containers being unreadable
+ - PHP Sensor: fixed wrong PHP version displayed in traces
+ - Python Sensor: Add OpenShift note on exposing the host IP
+ - Python Sensor: Remove debug message that may cause errors in certain version of Python
+ - Metric retrieval is now more reliable in cases where a lot of metrics are shown, e.g. within large tables.
+ - Long dynamic focus queries will no longer push the filter and save button off screen.
+ - MongoDb connection issues fixed
+ - Spark chart tooltip fixed
+ - Java thread dump fixed
+ - OpsGenie region configuration
+ - Kubernetes namespace as tag for app definition
+ - Host tags without equal sign can now be used for app definition
+ - Fixed charts in config view
+
 # Build 138
 
 6 June 2018
