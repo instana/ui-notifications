@@ -2,6 +2,8 @@
 
 July 9, 2018
 
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-139-brightgreen.svg)](https://docs.instana.io/releases/notes/build_139/)
+
 ## Features
  - New: Splunk downstream integration
  - New: OpenShift 3.7 support
