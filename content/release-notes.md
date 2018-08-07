@@ -2,7 +2,7 @@
 
 August 7th, 2018
 
-[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-140-brightgreen.svg)](https://docs.instana.io/releases/notes/build_139/)
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-140-brightgreen.svg)](https://docs.instana.io/releases/notes/build_140/)
 
 ## Application Perspectives
 
