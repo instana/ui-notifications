@@ -1,3 +1,56 @@
+# Build 140
+
+August 7th, 2018
+
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-140-brightgreen.svg)](https://docs.instana.io/releases/notes/build_139/)
+
+## Application Perspectives
+
+This release introduces application perspectives for our SaaS customers! We've put together a dedicated [transition page](https://docs.instana.io/how_to/transition_to_application_perspectives) to provide guidance on successfully adopting the changes and new capabilities.
+
+Note: Some of our largest customers may experience slow queries for large time windows in the new Analyze view, but optimizations are already on the way.
+
+## Other Features
+ - Kubernetes 1.10 support
+ - Azure Kubernetes Service (AKS): 1.10.x
+ - Node.js Sensor: Support recording of user-configurable HTTP headers in HTTP client and server instrumentation.
+ - Node.js Sensor: PostgreSQL instrumentation ([docs](https://docs.instana.io/ecosystem/node-js/#supported-versions))
+ - Node.js Sensor: `https` client calls are now instrumented
+ - Node.js Sensor: [express.js](http://expressjs.com) and [fastify](https://fastify.io) path templates, e.g. `/articles/:articleId`, are now captured for better insights into the executed server side logic.
+ - Python Sensor [version 1.0](https://github.com/instana/python-sensor/releases)!
+ - Python MySQLdb Instrumentation ([docs](https://docs.instana.io/ecosystem/python/#supported-versions))
+ - Failed Dropwizard healthchecks are now displayed as an issue in Instana
+ - Metric capture support for Spring Boot 2
+ - Tracing of Async OkHttp3 requests
+ - Support Tracing Java -> Amazon SNS -> Amazon SQS -> JMS -> Spring call flows
+ - Widened JBoss AS Monitoring support to 4 - 13
+
+## Improvements
+ - Integrations now include container labels whenever applicable.
+ - Improved Slack integration which makes use of Slack's formatting capabilities for message that are a lot easier to read.
+ - Node.js Sensor: Allow retrieval of package.json files.
+ - Python Sensor: Updates to support OpenTracing v2.0
+ - Python Sensor: Django & WSGI Improvements; More Safeties, Precision & Tests
+ - Python Sensor: Add setuptools check on install with clear message
+ - MongoDb Sensor: Supports connecting agent over TLS/SSL to MongoDb servers.
+ - GWT RPC Calls are now displayed as such
+ - Status Code Canges performed by ServletFilters are now captured correctly
+ - Spring Web Path templates are captured and used for endpoint mapping
+ - Better hostname detection on Windows Servers
+ - Improved tracing through Mule ESB
+ - Etcd sensor now more reliably detecs different etc configurations
+ - Httpd Sensor will now prefer non-ssl status urls to reduce CPU usage
+ - Improve Java 9 + 10 compatibility. Experimental Java 11 support.
+ - Improved compatibility to Docker Container User Namespaces
+ - Agent CPU usage reductions
+ - Issue severity levels for issues reported for infrastructure entities were redefined. See full list of tuned issues [here](/releases/notes/data_140). Critical severity now means that the entity is not able to fulfill its purpose anymore or will not be able to fulfill its purpose in the nearest future. An example would be a split-brain state in the Elasticsearch cluster or a disk empty on a host. Warning severity means that the performance of an entity is negatively affected, e.g. increased response time or GC time below 80%.
+
+## Fixes
+ - Node.js Sensor: Only try to instrument bluebird if it is actually available.
+ - Node.js Sensor: Avoid sending batch size 0 for Redis multi commands.
+ - Python Sensor: Format & clean up imports via isort
+ - Dropwizard Sensor: Failing health checks are now correctly discovered.
+
 # Build 139
 
 July 9, 2018
@@ -47,79 +100,3 @@ July 9, 2018
  - Kubernetes namespace as tag for app definition
  - Host tags without equal sign can now be used for app definition
  - Fixed charts in config view
-
-# Build 138
-
-6 June 2018
-
-[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-138-brightgreen.svg)](https://docs.instana.io/releases/notes/build_138/)
-
-## Features
-
-### AWS Lambda
-
-Instana now automatically discovers and monitors AWS Lambda. Read more about our [AWS support](https://docs.instana.io/ecosystem/aws)
-
-## Improvements
-
-- Various performance & reliability improvements.
-
-## Fixes
-
-- Node.js sensor: Correctly manage tracing context in ioredis instrumentation
-
-
-# Build 137
-
-29 May 2018
-
-[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-137-brightgreen.svg)](https://docs.instana.io/releases/notes/build_137/)
-
-## Features
-
-### Kubernetes
-
-Instana now automatically discovers and monitors Kubernetes clusters. See our [Kubernetes docs](https://docs.instana.io/ecosystem/kubernetes/) for details.
-
-**Please Note:** An update your instana-agent Kubernetes configuration is required. For more details see [Kubernetes agent setup](https://docs.instana.io/quick_start/agent_setup/container/kubernetes/)
-
-### OpenShift
-
-Along with our Kubernetes monitoring, we also now support OpenShift. See our [Openshift docs](https://docs.instana.io/ecosystem/openshift/) for details.
-
-**Please Note:** An update to your instana-agent OpenShift configuration is required. For more details see [Openshift setup](https://docs.instana.io/quick_start/agent_setup/container/openshift/)
-
-### Ceph
-
-We've also added monitoring of the Ceph distributed storage system. See our [Ceph docs](https://docs.instana.io/ecosystem/ceph/) for details.
-
-### Node.js v10
-
-Ahead of official LTS in October, we now support Node.js versions 10.0.0 and above. See our [Node.js docs](https://docs.instana.io/ecosystem/node-js/#supported-versions) for details.
-
-### Python SUDS (SOAP) Visibility
-
-The latest Python sensor now includes instrumentation for the [suds-jurko package](https://pypi.org/project/suds-jurko/).
-
-## Improvements
-
-- RabbitMq Sensor: Added [Network Partition Detection](https://www.rabbitmq.com/partitions.html) and alerting both as an incident and on dashboard.
-- MongoDB Sensor: Added set of new metrics for [MongoDB Replica Set](https://docs.mongodb.com/manual/replication/).
-- Postgresql Sensor: Added info about database size and number of active connection
-- ActiveMQ Sensor: Monitor a defined amount of topics/queues (including Dead-Letter queues) and alerting if filling
-- Python Sensor: Added safeties to Django calls
-- Python Sensor: Removed unused snapshot fields
-- Python Sensor: Show package version on boot
-- Ruby Sensor: Improved logger levels, hints and supported environment variables
-- Ruby Sensor: Show gem version in boot message
-- Go Sensor: re-use http client (performance)
-- Consul Sensor: Added configuration for ACL policy [Consul Sensor Configuration](https://docs.instana.io/ecosystem/consul/#configuration)
-
-
-## Fixes
-
-- Node.js Sensor: Properly initialize and assure operationId is generated in MongoDB instrumentation.
-- Node.js Sensor: Support for 128bit trace IDs.
-- Node.js Sensor: Reduce memory footprint when using HTTP agents with `maxSockets: Infinity`
-- Python Sensor: Specify exception class to be caught
-- Ruby Sensor: Update sys-proctable API call to follow upstream changes in v1.2.0
