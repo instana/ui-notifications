@@ -43,7 +43,9 @@ Note: Some of our largest customers may experience slow queries for large time w
  - Improve Java 9 + 10 compatibility. Experimental Java 11 support.
  - Improved compatibility to Docker Container User Namespaces
  - Agent CPU usage reductions
- - Issue severity levels for issues reported for infrastructure entities were redefined. See full list of tuned issues [here](/releases/notes/data_140). Critical severity now means that the entity is not able to fulfill its purpose anymore or will not be able to fulfill its purpose in the nearest future. An example would be a split-brain state in the Elasticsearch cluster or a disk empty on a host. Warning severity means that the performance of an entity is negatively affected, e.g. increased response time or GC time below 80%.
+ - Issue severity levels for issues reported for infrastructure entities were redefined. See full list of tuned issues [here](/releases/notes/data_140).
+ Critical severity now means that the entity is not able to fulfill its purpose anymore or will not be able to fulfill its purpose in the nearest future. An example would be a split-brain state in the Elasticsearch cluster or a disk empty on a host. 
+ Warning severity means that the performance of an entity is negatively affected, e.g. increased response time or GC time below 80%.
 
 ## Fixes
  - Node.js Sensor: Only try to instrument bluebird if it is actually available.
