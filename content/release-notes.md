@@ -4,12 +4,6 @@ September 6th, 2018
 
 [![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-141-brightgreen.svg)](https://docs.instana.io/releases/notes/build_141/)
 
-## Application Perspectives Tags
-
-After the introduction of Application Perspectives we are continuing to release new vital features. Most notably we are releasing **tag suggestions** which significantly improve working with Application Perspectives and Analyzing Calls. Additionally, we have added **new tags** for the creation of Application Perspectives like `service.name`, `endpoint.name` and `call.technology`.
-
-## More Application Perspectives Features
-
 ## Features
  - Application Perspectives: Tag suggestions for Analyzing Calls
  - Application Perspectives: Additional tags `service.name`, `endpoint.name` and `call.technology` for creating Application Perspectives
