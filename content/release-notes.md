@@ -1,3 +1,52 @@
+# Build 143
+
+October 18th, 2018
+
+[![Detailed Release Notes](https://img.shields.io/badge/detailed%20release%20notes-143-brightgreen.svg)](https://docs.instana.io/releases/notes/build_143/)
+
+## Features
+
+- Analyze Traces: Traces are now available to analyze in addition to calls.
+- Error and Log Messages: Call error messages and log messages are now exposed for applications, services and endpoints.
+- More Application Perspectives Features: issue detection for endpoints; service mapping for Tomcat and JBoss based on deployments; tags can now be combined with both AND/OR when defining applications.
+- Google Chat integration: You can now send alerts to Google Chat.
+- Ruby Resque Instrumentation
+- Google Bigtable Instrumentation
+- Vert.x Redis Instrumentation
+- Python RabbitMQ Instrumentation
+- NGINX Plus Sensor
+
+## Improvements
+
+- SAML: Multi tenant support; download of SAML Metadata XML for IdP; upload of SAML Metadata XML from IdP; bidirectional signatures of the AuthN Request.
+- Amazon EC2 Name tags are now used to name hosts.
+- Host Sensor: Hot-reloading filesystems and NFS mounts configuration; added ability to extract installed packages on Debian based Linux systems.
+- Python Sensor: Improved host communications - lighter weight; better error handling.
+- Ruby Sensor: Better Rails initialization.
+- Ruby Sensor: Span Reporting: Don’t report nils.
+- Kubernetes Sensor: Added Namespaces support (including resource quotas).
+- Hazelcast Sensor: Added operation count and connected clients.
+- Hazelcast Sensor: Added capacity of event queue.
+- OracleDb Sensor: Added support for remote monitoring.
+- PHP Sensor: Improved detection for mod_php.
+- PHP Sensor: calls made via the official ElasticSearch client now show up as ElasticSearch spans.
+- Tomcat Sensor: Added health issues for sudden drop and increase of number of session.
+- UI: Numbers are now formatted according to users’ preferred locale (preferred locale defined in the browser).
+- Website Monitoring: The ID of the current page load is now accessible.
+- Dynamic Focus for endpoints: Issues and infrastructure related to endpoints can be searched/filtered by Dynamic Focus using queries like entity.endpoint.name:"GET /articles".
+
+## Fixes
+
+- Ruby Sensor: Add safety and avoid triggering DB connections when unknown adapter in use.
+- Ruby Sensor: Support ::Instana::Tracer.xxx call style for the instantiated tracer.
+- Ruby Sensor: Update stack reporting key.
+- Ruby Sensor: Delay announce on boot; Fix header reference.
+- Hazelcast Sensor: Fixed a performance issue in the cluster safe state monitoring.
+- PHP Sensor: fixes a bug with predis connection objects when using clusters.
+- PHP Sensor: fixes segfaults when using mpm_worker/ZTS on PHP 7.x.
+- PHP Sensor: fixes interleaving batches showing as concurrent spans.
+
+
 # Build 142
 
 September 20th, 2018
@@ -112,7 +161,7 @@ Note: Some of our largest customers may experience slow queries for large time w
  - Improved compatibility to Docker Container User Namespaces
  - Agent CPU usage reductions
  - Issue severity levels for issues reported for infrastructure entities were redefined. See full list of tuned issues [here](https://docs.instana.io/releases/notes/data_140/).
- Critical severity now means that the entity is not able to fulfill its purpose anymore or will not be able to fulfill its purpose in the nearest future. An example would be a split-brain state in the Elasticsearch cluster or a disk empty on a host. 
+ Critical severity now means that the entity is not able to fulfill its purpose anymore or will not be able to fulfill its purpose in the nearest future. An example would be a split-brain state in the Elasticsearch cluster or a disk empty on a host.
  Warning severity means that the performance of an entity is negatively affected, e.g. increased response time or GC time below 80%.
 
 ## Fixes
