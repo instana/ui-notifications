@@ -1,1 +1,1 @@
-Starting February 27th, 09:00am UTC we will roll out a new release to our SaaS customers. You may experience short interruptions in dataflow.
+Starting February 28th, 09:00 AM UTC we will roll out a new release to our SaaS customers. You may experience short interruptions in dataflow.
