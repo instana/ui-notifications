@@ -1,1 +1,1 @@
-
+On *April 9, 08:00-10:00 AM UTC*, we will roll out a new release to our US customers. The rollout for EU customers is scheduled for *April 9, 08:00-10:00 PM UTC*. You may experience short interruptions in dataflow.
