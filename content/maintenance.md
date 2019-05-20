@@ -1,1 +1,1 @@
-
+On **Tuesday May 21, 2019** we will rollout release 154. Rollout for US customers is scheduled between *8-10am (UTC)* and rollout for EU customers between *8-10pm (UTC)*.
