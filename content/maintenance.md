@@ -1,1 +1,1 @@
-
+On Tuesday we will rollout release 160. Rollout for US customers is scheduled between 6-8am (UTC) and rollout for EU customers between 8-10pm (UTC). Release notes: https://docs.instana.io/releases/notes/next/
