@@ -1,1 +1,1 @@
-On **Tuesday August 27th, 2019** we will rollout release 161. Rollout for US customers is scheduled between 6-8am (UTC) and rollout for EU customers between 8-10pm (UTC). [Release notes: https://docs.instana.io/releases/notes/next/](https://docs.instana.io/releases/notes/next/)
+On **Tuesday August 27th, 2019** we will rollout release 161. Rollout for US customers is done. Rollout for EU customers is scheduled between 8-10pm (UTC). [Release notes: https://docs.instana.io/releases/notes/build_161/](https://docs.instana.io/releases/notes/build_161/)
