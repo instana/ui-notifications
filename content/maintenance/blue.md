@@ -1,1 +1,1 @@
-On **Tuesday, March 3rd 2020** we will rollout release 172. Rollout for EU customers is scheduled between 9-11pm (UTC).
+On **Tuesday, March 17th 2020** we will rollout release 173. Rollout for EU customers is scheduled between 9-11pm (UTC).
