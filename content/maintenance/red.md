@@ -1,1 +1,1 @@
-On Wednesday (October 7th 2020) we changed the ingress IP for ingress-red-saas.instana.io / saas-us-west-2.instana.io to 35.163.12.228. Please add this IP to your egress network config in case you are blocking outbound traffic by IP.
+On Tuesday, October 13th 2020 we will roll out release 188. Rollout for US customers is scheduled to start at 8am UTC.
