@@ -1,1 +1,0 @@
-On Tuesday, October 27th we will roll out release 189. Rollout for EU customers is scheduled to start at 9am UTC.
