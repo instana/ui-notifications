@@ -1,1 +1,1 @@
-Release 195 had to be postponed. We will update you with a new schedule as soon as possible.
+On Wednesday, February 24th we will roll out release 195. Rollout for EU customers is scheduled to start at 9pm UTC.
