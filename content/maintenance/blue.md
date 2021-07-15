@@ -1,1 +1,1 @@
-Release 205 is postponed. We will update you with a new date soon.
+On Thurday, July 15th we will roll out release 205. Rollout for EU customers is scheduled to start at 8pm UTC.
