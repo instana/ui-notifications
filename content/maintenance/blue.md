@@ -1,2 +1,2 @@
 
-On Tuesday, September 21st we will roll out release 210. Rollout for EU customers is scheduled to start at 7:00pm UTC.
+On Wednesday, September 22nd we will roll out release 210. Rollout for EU Blue customers is scheduled to start at 8:00pm UTC.
