@@ -1,1 +1,2 @@
-
+# Instana Agent - Log4j CVE-2021-44228 Update
+Due to a vulnerability discovered in Apache Log4j (CVE-2021-44228) we provided an update to our agent component. Please refer to the [Instana incident page](https://status.instana.io/incidents/4zgcd2gzf4jw) for details on how to update your agent.
