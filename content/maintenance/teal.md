@@ -1,2 +1,2 @@
-On *Thursday, June 13*, we will roll out release 275.
-Rollout for India customers is scheduled to start at *08:00AM* IST!
+On *Wednesday, 2024-07-24*, we will roll out release 278.
+Rollout for APAC customers is scheduled to start at *03:00 AM* UTC!
