@@ -1,2 +1,1 @@
-On *Wednesday, 2024-07-24*, we will roll out release 278.
-Rollout for APAC customers is scheduled to start at *03:00 AM* UTC!
+On 2024-09-04 Wednesday, we will roll out release-281. Rollout for APAC customers is scheduled to start at 11:30AM UTC.
