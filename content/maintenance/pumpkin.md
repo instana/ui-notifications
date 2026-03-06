@@ -1,2 +1,2 @@
-On *Wednesday, 2026-02-25*, we will roll out release-314.
+On *Tuesday, 2026-03-10*, we will roll out release-313.
 Rollout for APAC customers is scheduled to start at *10:30 AM* UTC!
