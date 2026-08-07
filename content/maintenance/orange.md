@@ -1,2 +1,2 @@
-On *Tuesday, 2026-08-11*, we will roll out release-323.
-Rollout for US customers is scheduled to start at *09:30 AM* UTC!
+On *Monday, 2026-08-10*, we will roll out release-323.
+Rollout for US customers is scheduled to start at *09:00 AM* UTC!
