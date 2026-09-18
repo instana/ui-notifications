@@ -1,2 +1,2 @@
-On *Tuesday, 2026-09-22*, we will roll out release-323.
-Rollout for APAC customers is scheduled to start at *11:30 AM* UTC!
+On *Thursday, 2026-09-24*, we will roll out release-326.
+Rollout for APAC customers is scheduled to start at *01:00 PM* UTC!
